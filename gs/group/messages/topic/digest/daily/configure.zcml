@@ -35,79 +35,79 @@
   <browser:viewletManager
     name="groupserver.DailyTopicsDigestHtmlVM"
     for="gs.group.base.interfaces.IGSGroupMarker"
-    permission="zope2.View"
     provides=".interfaces.IDailyTopicsDigestHtmlVM"
     class="gs.viewlet.manager.WeightOrderedViewletManager"
-    template="browser/templates/topicsDigestVM.pt"/>
+    template="browser/templates/topicsDigestVM.pt"
+    permission="zope2.View" />
 
   <browser:viewletManager
     name="groupserver.DailyTopicsDigestTxtVM"
     for="gs.group.base.interfaces.IGSGroupMarker"
-    permission="zope2.View"
     provides=".interfaces.IDailyTopicsDigestTxtVM"
     class="gs.viewlet.manager.WeightOrderedViewletManager"
-    template="browser/templates/topicsDigestVM.pt"/>
+    template="browser/templates/topicsDigestVM.pt"
+    permission="zope2.View" />
 
   <!-- Header Viewlets -->
   <browser:viewlet
     name="groupserver.DailyTopicsDigestHeaderHtmlViewlet"
     for="gs.group.base.interfaces.IGSGroupMarker"
-    permission="zope2.Public"
     manager=".interfaces.IDailyTopicsDigestHtmlVM"
     class="gs.group.messages.topic.digest.base.viewlets.HeaderFooterViewlet"
     template="browser/templates/header-html.pt"
     weight="10"
-    title="Daily Digest Header in HTML"/>
+    title="Daily Digest Header in HTML"
+    permission="zope2.Public" />
 
   <browser:viewlet
     name="groupserver.DailyTopicsDigestHeaderTxtViewlet"
     for="gs.group.base.interfaces.IGSGroupMarker"
-    permission="zope2.Public"
     manager=".interfaces.IDailyTopicsDigestTxtVM"
     class="gs.group.messages.topic.digest.base.viewlets.HeaderFooterViewlet"
     template="browser/templates/header-txt.pt"
     weight="10"
-    title="Daily Digest Header in Text"/>
+    title="Daily Digest Header in Text"
+    permission="zope2.Public" />
 
  <browser:viewlet
     name="groupserver.DailyTopicsDigestHtmlViewlet"
     for="gs.group.base.interfaces.IGSGroupMarker"
-    permission="zope2.Public"
     manager=".interfaces.IDailyTopicsDigestHtmlVM"
     class=".viewlets.DailyTopicsDigestViewlet"
     template="browser/templates/dailyTopicsDigestBody-html.pt"
     weight="20"
-    title="Daily Topics Digest"/>
+    title="Daily Topics Digest"
+    permission="zope2.Public" />
 
   <browser:viewlet
     name="groupserver.DailyTopicsDigestTxtViewlet"
     for="gs.group.base.interfaces.IGSGroupMarker"
-    permission="zope2.Public"
     provides=".interfaces.IDailyTopicsDigestViewlet"
     manager=".interfaces.IDailyTopicsDigestTxtVM"
     class=".viewlets.DailyTopicsDigestViewlet"
     template="browser/templates/dailyTopicsDigestBody-txt.pt"
     weight="20"
-    title="Daily Topics Digest"/>
+    title="Daily Topics Digest"
+    permission="zope2.Public" />
 
   <browser:viewlet
     name="groupserver.DailyTopicsDigestFooterHtmlViewlet"
     for="gs.group.base.interfaces.IGSGroupMarker"
-    permission="zope2.Public"
     manager=".interfaces.IDailyTopicsDigestHtmlVM"
     class="gs.group.messages.topic.digest.base.viewlets.HeaderFooterViewlet"
     template="browser/templates/footer-html.pt"
     weight="30"
-    title="Daily Digest Footer in HTML"/>
+    title="Daily Digest Footer in HTML"
+    permission="zope2.Public" />
 
   <browser:viewlet
     name="groupserver.DailyTopicsDigestFooterTxtViewlet"
     for="gs.group.base.interfaces.IGSGroupMarker"
-    permission="zope2.Public"
     manager=".interfaces.IDailyTopicsDigestTxtVM"
     class="gs.group.messages.topic.digest.base.viewlets.HeaderFooterViewlet"
     template="browser/templates/footer-txt.pt"
     weight="30"
-    title="Daily Digest Footer in Text"/>
+    title="Daily Digest Footer in Text"
+    permission="zope2.Public" />
 
 </configure>
