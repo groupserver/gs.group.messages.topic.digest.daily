@@ -16,6 +16,12 @@
 
   <include package="zope.viewlet" file="meta.zcml" />
 
+  <adapter
+    for="gs.group.base.interfaces.IGSGroupMarker
+         zope.publisher.interfaces.browser.IBrowserRequest"
+    provides="gs.group.messages.topic.digest.base.interfaces.ITopicsDigestNotifier"
+    factory=".notifier.DailyDigestNotifier" />
+
   <!-- Topic digest message pages, in HTML and plain-text  -->
   <browser:page
     name="gs-group-messages-topicsdigest-daily.html"
