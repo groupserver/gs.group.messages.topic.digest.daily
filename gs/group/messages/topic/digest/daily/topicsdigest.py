@@ -25,25 +25,20 @@ class DailyTopicsDigest(BaseTopicsDigest):
             num_posts_today - Number of posts made in the topic today
             num_posts_total - Total number of posts in the topic
         """
+    last_author_key = 'last_author_id'
+    subject_key = 'subject'
 
     def __init__(self, context, siteInfo):
         super(DailyTopicsDigest, self).__init__(context, siteInfo)
-        self.__dailyDigestQuery__ = None
-        self.__last_author_key__ = 'last_author_id'
-        self.__subject_key__ = 'subject'
 
-    def __getTopics__(self):
-        if self.__dailyDigestQuery__ is None:
-            self.__dailyDigestQuery__ = \
-                self.messageQuery.topics_sinse_yesterday(self.siteInfo.id,
-                                                         self.groupInfo.id)
-
-        retval = self.__dailyDigestQuery__
+    def get_topics(self):
+        retval = self.messageQuery.topics_sinse_yesterday(self.siteInfo.id,
+                                                          self.groupInfo.id)
         assert type(retval) == list
         return retval
 
-    def __formatTopic__(self, topic):
-        topic = super(DailyTopicsDigest, self).__formatTopic__(topic)
+    def format_topic(self, topic):
+        topic = super(DailyTopicsDigest, self).format_topic(topic)
         topic['num_posts_today'] = topic['num_posts_day']
         topic['num_posts_total'] = topic['num_posts']
         del topic['num_posts_day']

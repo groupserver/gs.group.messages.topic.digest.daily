@@ -25,14 +25,14 @@
 
   <!-- Topic digest message pages, in HTML and plain-text  -->
   <browser:page
-    name="gs-group-messages-topicsdigest-daily.html"
+    name="gs-group-messages-topic-digest-daily.html"
     for="gs.group.base.interfaces.IGSGroupMarker"
     class=".notifiermessages.DailyMessage"
     template="browser/templates/dailyTopicsDigest-html.pt"
     permission="zope2.View"/>
 
   <browser:page
-    name="gs-group-messages-topicsdigest-daily.txt"
+    name="gs-group-messages-topic-digest-daily.txt"
     for="gs.group.base.interfaces.IGSGroupMarker"
     class=".notifiermessages.DailyMessageText"
     template="browser/templates/dailyTopicsDigest-txt.pt"
