@@ -17,6 +17,7 @@
   <include package="zope.viewlet" file="meta.zcml" />
 
   <adapter
+    name="gs-group-messages-topic-digest-daily-notifier"
     for="gs.group.base.interfaces.IGSGroupMarker
          zope.publisher.interfaces.browser.IBrowserRequest"
     provides="gs.group.messages.topic.digest.base.interfaces.ITopicsDigestNotifier"
