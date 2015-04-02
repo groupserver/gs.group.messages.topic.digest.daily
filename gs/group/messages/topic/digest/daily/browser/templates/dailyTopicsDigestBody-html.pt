@@ -1,16 +1,13 @@
 <tal:block
-  xmlns="http://www.w3.org/1999/xhtml"
-  xmlns:tal="http://xml.zope.org/namespaces/tal"
-  xmlns:metal="http://xml.zope.org/namespaces/metal"
   define=" groupName options/groupName | view/groupInfo/name;
           topicsDigest options/topicsDigest | view/topicsDigest;
           np python:topicsDigest.post_stats['new_posts'];
           et python:topicsDigest.post_stats['existing_topics'];
           nt python:topicsDigest.post_stats['new_topics'];
           munge_date python:modules['Products.XWFCore.XWFUtils'].munge_date">
-  <p style="margin:1.385em 0;" tal:define="singular python:np==1;">
+  <p tal:define="singular python:np==1;">
     This is your daily digest of posts made to
-    <a style="color:black;"  tal:attributes="href view/groupInfo/url"
+    <a tal:attributes="href view/groupInfo/url"
        tal:content="groupName">the group</a>.
     There <tal:block replace="python:singular and 'is' or 'are'"/>
     <strong>
@@ -29,49 +26,47 @@
     </tal:block>
     since yesterday:
   </p>
-  <ul class="hfeed"
-      style="list-style-type:none;margin:1.385em 0 0 1.385em;padding:0;">
+  <ul class="hfeed">
     <tal:block
       repeat="topic options/topicsDigest/topics | view/topicsDigest/topics | python:[]">
-      <li class="hentry"
-          style="margin:0.695em 0;padding:0.695em 0;border-bottom:thin solid #dddddd;width:49.154em;">
-        <a  href="#" style="font-weight:bold;color:black;display:block;"
+      <li class="hentry">
+        <a  href="#"
             tal:attributes="href topic/topic_url"
             tal:content="topic/topic_subject">Topic Subject</a>
-        <ul style="list-style-type:none;padding:0.695em 0 0 0;">
-          <li style="color:#999999;">
+        <ul>
+          <li>
            <span tal:content="topic/num_posts_total">some</span> posts
             &#8226;
             <span tal:content="topic/num_posts_today">some</span> posts since
             yesterday
             &#8226;
             Latest post by
-            <span class="vcard fn" style="color:black"
+            <span class="vcard fn"
                   tal:content="topic/last_post_author/name">author</span>
             at
-            <span class="date published updated" style="color:black"
+            <span class="date published updated"
                   tal:define="d topic/last_post_date;
                               date python:munge_date(view.context, d);"
                   tal:content="date">date</span>
           </li>
           <li>
-            <span style="color:#999999;">Keywords: </span>
+            <span>Keywords: </span>
             <span tal:content="python:', '.join(topic['keywords'])">word</span>
           </li>
         </ul>
       </li><!--hentry-->
     </tal:block>
   </ul><!--hfeed-->
-  <p style="margin:1.385em 0;">
-    <a href="#" style="color:black;" tal:attributes="href view/groupInfo/url">
+  <p>
+    <a href="#" tal:attributes="href view/groupInfo/url">
       Visit <span tal:content="view/groupInfo/name">this group</span></a>
       to start a new topic, make a post, or to find out more about this
       group.
   </p>
-  <p style="margin:1.385em 0 0 0;">
+  <p>
     Kind regards,
   </p>
-  <p style="margin:0 0 1.385em 1.385em;">
+  <p>
     The <span tal:content="view/siteInfo/name">this group</span>
     team
   </p>

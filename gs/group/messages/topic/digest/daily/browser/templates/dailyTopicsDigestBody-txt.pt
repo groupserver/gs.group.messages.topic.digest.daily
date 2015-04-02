@@ -1,7 +1,4 @@
-<tal:block 
-  xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:tal="http://xml.zope.org/namespaces/tal"
-      xmlns:metal="http://xml.zope.org/namespaces/metal"
+<tal:block
   define=" groupName options/groupName | view/groupInfo/name;
           topicsDigest options/topicsDigest | view/topicsDigest;
           np python:topicsDigest.post_stats['new_posts'];

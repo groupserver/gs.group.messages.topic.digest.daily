@@ -1,5 +1,4 @@
 <tal:block
-  xmlns:tal="http://xml.zope.org/namespaces/tal"
   define="siteName options/siteName | view/siteInfo/name | string: No Site Name;
           groupName options/groupName | view/groupInfo/name | string: No Group Name;
           groupUrl options/groupUrl | view/groupInfo/url | string: No Group URL;

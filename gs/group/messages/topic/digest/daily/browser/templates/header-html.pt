@@ -1,7 +1,3 @@
-<div xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:tal="http://xml.zope.org/namespaces/tal"
-      id="gs-group-messages-topicsdigest-header"
-     style="background-color:#EEEEEE;border-bottom:medium solid #666666;;">
-  <h1 style="font-size:278%;font-weight:bold;margin:0;padding:0.689em 0 0.689em 0.689em;"
-      tal:content="view/siteInfo/name">This Site</h1>
+<div id="gs-group-messages-topic-digest-daily-h">
+  <h1 tal:content="view/siteInfo/name">This Site</h1>
 </div>
