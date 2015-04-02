@@ -1,3 +1,4 @@
-<tal:block content="structure provider:groupserver.DailyTopicsDigestTxtVM">
+<tal:block xmlns:tal="http://xml.zope.org/namespaces/tal"
+      content="structure provider:groupserver.DailyTopicsDigestTxtVM">
     Content of the daily topics digest in text.
 </tal:block>
