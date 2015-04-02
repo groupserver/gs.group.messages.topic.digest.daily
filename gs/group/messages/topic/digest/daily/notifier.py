@@ -74,8 +74,8 @@ class DailyDigestNotifier(object):
 
     @Lazy
     def subject(self):
-        m = '{groupShortName} Topic Digest: {new_posts} New Posts, '\
-            '{new_topics} New Topics'
+        m = '{groupShortName} topic digest: {new_posts} new posts, '\
+            '{new_topics} new topics'
         shortName = self.groupInfo.get_property('short_name',
                                                 self.groupInfo.name)
         digestStats = self.topicsDigest.post_stats
