@@ -1,3 +1,3 @@
 <div id="gs-group-messages-topic-digest-daily-h">
-  <h1 tal:content="view/siteInfo/name">This Site</h1>
+  <h1 tal:content="view/groupInfo/name">This Site</h1>
 </div>
