@@ -1,0 +1,11 @@
+<tal:block xmlns:tal="http://xml.zope.org/namespaces/tal">
+/* Digest CSS */
+li.hentry {
+  list-style: none;
+}
+.hentry .topic {
+   color: #404d40;
+   font-weight: 900;
+   font-size: 16px;
+}
+</tal:block>

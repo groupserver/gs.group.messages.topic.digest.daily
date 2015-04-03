@@ -30,12 +30,13 @@
     <tal:block
       repeat="topic options/topicsDigest/topics | view/topicsDigest/topics | python:[]">
       <li class="hentry">
-        <a  href="#"
-            tal:attributes="href topic/topic_url"
-            tal:content="topic/topic_subject">Topic Subject</a>
+        <a href="#" class="topic"
+           tal:attributes="href topic/topic_url"
+           tal:content="topic/topic_subject">Topic Subject</a>
         <ul>
           <li>
-           <span tal:content="topic/num_posts_total">some</span> posts
+            <strong><span tal:content="topic/num_posts_total">some</span> 
+            posts</strong>
             &#8226;
             <span tal:content="topic/num_posts_today">some</span> posts since
             yesterday
@@ -50,7 +51,7 @@
                   tal:content="date">date</span>
           </li>
           <li>
-            <span>Keywords: </span>
+            <span class="muted">Keywords: </span>
             <span tal:content="python:', '.join(topic['keywords'])">word</span>
           </li>
         </ul>

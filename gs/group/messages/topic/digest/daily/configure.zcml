@@ -31,6 +31,16 @@
     template="browser/templates/dailyTopicsDigest-html.pt"
     permission="zope2.View"/>
 
+  <browser:viewlet
+    name="gs-group-messages-topic-digest-daily"
+    for="gs.group.base.interfaces.IGSGroupMarker"
+    manager="gs.content.email.css.interfaces.IHTMLEmailStyle"
+    class="gs.viewlet.SiteViewlet"
+    template="browser/templates/css.pt"
+    title="Topic Digest CSS"
+    weight="90"
+    permission="zope2.Public"/>
+
   <browser:page
     name="gs-group-messages-topic-digest-daily.txt"
     for="gs.group.base.interfaces.IGSGroupMarker"
@@ -91,7 +101,7 @@
     for="gs.group.base.interfaces.IGSGroupMarker"
     provides=".interfaces.IDailyTopicsDigestViewlet"
     manager=".interfaces.IDailyTopicsDigestTxtVM"
-    class=".viewlets.DailyTopicsDigestViewlet"
+    class=".viewlets.DailyTopicsDigestViewletTxt"
     template="browser/templates/dailyTopicsDigestBody-txt.pt"
     weight="20"
     title="Daily Topics Digest"
