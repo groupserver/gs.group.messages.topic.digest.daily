@@ -30,7 +30,7 @@ class DailyMessage(TopicsDigestMessage):
 
 class DailyMessageText(DailyMessage, TextMixin):
      def __init__(self, group, request):
-        super(LeftTXTNotification, self).__init__(group, request)
+        super(DailyMessageText, self).__init__(group, request)
         f = 'gs-group-messages-topic-digest-daily-{0}-{1}.txt'
         filename = f.format(self.siteInfo.id, self.groupInfo.id)
         self.set_header(filename)
