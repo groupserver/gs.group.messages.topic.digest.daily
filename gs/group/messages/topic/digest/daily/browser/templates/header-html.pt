@@ -1,4 +1,6 @@
 <h1 id="gs-group-messages-topic-digest-daily-h">
   Latest topics in
-  <span class="group" tal:content="view/groupInfo/name">This group</span>
+  <a class="group" href="#"
+     tal:attributes="href view/groupInfo/url"
+     tal:content="view/groupInfo/name">This group</a>
 </h1>
