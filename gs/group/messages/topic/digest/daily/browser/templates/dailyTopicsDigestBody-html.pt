@@ -14,11 +14,10 @@
     <span tal:content="view/peopleText">People</span> have been
     posting about the following since yesterday:
   </p>
-  <table border="0" cellpadding="0" cellspacing="0" width="100%"
-         class="hfeed">
+  <table border="0" cellpadding="0" cellspacing="0" width="100%">
     <tal:block
       repeat="topic options/topicsDigest/topics | view/topicsDigest/topics | python:[]">
-      <tr class="hentry">
+      <tr class="gs-group-messages-topic-digest-daily-topic">
         <td class="userimage photo" width="70"
             tal:define="userUrl string:${view/siteInfo/url}${topic/last_post_author/url}">
           <a href="#" class="topic"
@@ -29,7 +28,7 @@
                  tal:attributes="src string:${userUrl}/gs-profile-image-square/70;
                                  alt string:Photo of ${topic/last_post_author/name}" /></a>
         </td><!--userimage-->
-        <td class="topic-info">
+        <td class="gs-group-messages-topic-digest-daily-topic-info">
           <a href="#" class="topic"
              tal:attributes="href topic/topic_url"
              tal:content="topic/topic_subject">Topic Subject</a>

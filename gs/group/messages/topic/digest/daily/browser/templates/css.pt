@@ -1,25 +1,32 @@
 <tal:block xmlns:tal="http://xml.zope.org/namespaces/tal">
 /* Digest CSS */
-.topic-info {
-    padding-left: 10px;  /* 0.5u*/
+.gs-group-messages-topic-digest-daily-topic td {
+    padding: 0 0 20px 0;
 }
-.hentry ul, .hentry li {
+td.gs-group-messages-topic-digest-daily-topic-info {
+    padding: 0 0 20px 10px;  /* 1u 0.5u*/
+}
+.gs-group-messages-topic-digest-daily-topic ul, 
+.gs-group-messages-topic-digest-daily-topic li {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
 }
-.hentry li {
+.gs-group-messages-topic-digest-daily-topic ul {
+    margin-left: 0; /* Needed */
+}
+.gs-group-messages-topic-digest-daily-topic li {
     list-style: none;
 }
-.hentry .topic {
+.gs-group-messages-topic-digest-daily-topic .topic {
     color: #404d40;
     font-weight: 900;
     font-size: 20px;  /* 1u */
     line-height: 30px /* 1.5u */
 }
 #gs-group-messages-topic-digest-daily-grouplinks-more {
-    padding: 20px 0 0 0;
+    padding: 0 0 0 0;
 }
 #gs-group-messages-topic-digest-daily-grouplinks-new {
-    padding: 20px 0 0 40px;
+    padding: 0 0 0 40px;
 }
 </tal:block>
