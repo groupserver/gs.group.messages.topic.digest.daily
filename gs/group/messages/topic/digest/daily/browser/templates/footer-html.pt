@@ -13,22 +13,22 @@
   </p>
   <p>
     <a tal:attributes="href string:${view/groupInfo/url}/email_settings.html"
-       href="#"><strong>Change</strong> your email settings</a>
+       href="#"><b>Change</b> your email settings</a>
       to receive more or less email from
       <span class="group" tal:content="view/groupInfo/name">this group</span>.
   </p>
   <p>
-    <strong>Leave?</strong>
+    <b>Leave?</b>
     <a tal:attributes="href string:mailto:${groupEmail}?Subject=Unsubscribe"
        href='#'>Email
       <code tal:content="groupEmail">this@address</code></a>
     with the subject line <code>Unsubscribe</code>.
   </p>
   <p tal:define="e view/siteInfo/get_support_email">
-    <strong>Help!</strong>
+    <b>Help!</b>
+    If you have any problems, please
     <a tal:attributes="href string:mailto:${e}?Subject=Digest%20Issue"
-       href="#">Email
+       href="#"><b>email</b>
       <code tal:content="e">this@email</code></a>
-      if you have any problems.
   </p>
 </div>
