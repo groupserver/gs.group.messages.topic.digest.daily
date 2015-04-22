@@ -1,11 +1,25 @@
 <tal:block xmlns:tal="http://xml.zope.org/namespaces/tal">
 /* Digest CSS */
-li.hentry {
-  list-style: none;
+.topic-info {
+    padding-left: 10px;  /* 0.5u*/
+}
+.hentry ul, .hentry li {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+.hentry li {
+    list-style: none;
 }
 .hentry .topic {
-   color: #404d40;
-   font-weight: 900;
-   font-size: 16px;
+    color: #404d40;
+    font-weight: 900;
+    font-size: 20px;  /* 1u */
+    line-height: 30px /* 1.5u */
+}
+#gs-group-messages-topic-digest-daily-grouplinks-more {
+    padding: 20px 0 0 0;
+}
+#gs-group-messages-topic-digest-daily-grouplinks-new {
+    padding: 20px 0 0 40px;
 }
 </tal:block>

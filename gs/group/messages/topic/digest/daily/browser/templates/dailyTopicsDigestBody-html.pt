@@ -19,10 +19,15 @@
     <tal:block
       repeat="topic options/topicsDigest/topics | view/topicsDigest/topics | python:[]">
       <tr class="hentry">
-        <td class="userimage photo" width="50"
+        <td class="userimage photo" width="70"
             tal:define="userUrl string:${view/siteInfo/url}${topic/last_post_author/url}">
-          <img src="#" title="Photo of the most recent author"
-               tal:attributes="src string:${userUrl}/gs-profile-image/50/70" />
+          <a href="#" class="topic"
+             tal:attributes="href topic/topic_url">
+            <img src="#" title="Photo of the most recent author"
+                 alt="Photo"
+                 width="70" height="70" border="0"
+                 tal:attributes="src string:${userUrl}/gs-profile-image-square/70;
+                                 alt string:Photo of ${topic/last_post_author/name}" /></a>
         </td><!--userimage-->
         <td class="topic-info">
           <a href="#" class="topic"
@@ -67,11 +72,17 @@
       </tr><!--hentry-->
     </tal:block>
   </table><!--hfeed-->
-  <p>
-    <a class="btn" href="#"
-       tal:attributes="href view/groupInfo/url">More topics&#8230;</a>
-    <a class="btn" href="newTopic.html"
-       tal:attributes="href string:${view/groupInfo/url}/messages/newTopic.html"><span class="muted">&#10010;</span>
-    <strong>New topic</strong></a>
-  </p>
+  <table id="gs-group-messages-topic-digest-daily-grouplinks">
+    <tr>
+      <td id="gs-group-messages-topic-digest-daily-grouplinks-more">
+        <a class="btn" href="#"
+           tal:attributes="href view/groupInfo/url">More topics&#8230;</a>
+      </td>
+      <td id="gs-group-messages-topic-digest-daily-grouplinks-new">
+        <a class="btn" href="newTopic.html"
+           tal:attributes="href string:${view/groupInfo/url}/messages/newTopic.html"><span class="muted">&#10010;</span>
+        <strong>New topic</strong></a>
+      </td>
+    </tr>
+  </table>
 </tal:block>
