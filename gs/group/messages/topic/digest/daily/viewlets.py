@@ -14,6 +14,9 @@
 ############################################################################
 from __future__ import absolute_import, unicode_literals
 from textwrap import fill
+from zope.cachedescriptors.property import Lazy
+from zope.component import createObject
+from gs.core import comma_comma_and
 from gs.group.messages.topic.digest.base import TopicsDigestViewlet
 from .topicsdigest import DailyTopicsDigest
 
@@ -26,6 +29,19 @@ class DailyTopicsDigestViewlet(TopicsDigestViewlet):
                                                        view, manager)
         self.__topicsDigest__ = DailyTopicsDigest(self.context,
                                                   self.siteInfo)
+
+    @Lazy
+    def people(self):
+        userIds = self.topicsDigest.messageQuery.recent_authors(days=1)
+        users = [createObject('groupserver.UserFromId', self.context,
+                              userId) for userId in userIds]
+        retval = [u.name for u in users]
+        return retval
+
+    @Lazy
+    def peopleText(self):
+        retval = comma_comma_and(self.people)
+        return retval
 
 
 class DailyTopicsDigestViewletTxt(DailyTopicsDigestViewlet):

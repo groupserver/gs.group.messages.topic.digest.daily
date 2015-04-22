@@ -5,7 +5,7 @@
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       metal:use-macro="context/@@groupserver_email_layout/page">
   <head>
-    <title>Daily digest:
+    <title metal:fill-slot="title">Daily digest:
       <tal:block content="view/groupInfo/name"/>:
       <tal:block content="view/siteInfo/name"/></title>
   </head>

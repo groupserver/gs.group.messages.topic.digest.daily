@@ -15,6 +15,7 @@
 from __future__ import absolute_import, unicode_literals
 from zope.cachedescriptors.property import Lazy
 from gs.group.messages.topic.digest.base import BaseTopicsDigest
+from gs.core import comma_comma_and
 
 
 class DailyTopicsDigest(BaseTopicsDigest):
@@ -51,4 +52,10 @@ class DailyTopicsDigest(BaseTopicsDigest):
             24 hours."""
         retval = (self.post_stats['new_posts'] > 0)
         assert type(retval) == bool
+        return retval
+
+    @Lazy
+    def people(self):
+        people = self.messageQuery.recent_authors(days=1)
+        retval = comma_comma_and(people)
         return retval
