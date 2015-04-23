@@ -6,7 +6,9 @@
   <hr/>
   <p>
     You received this email because you are a member of
-    <span class="group" tal:content="view/groupInfo/name">this group</span>
+    <a class="group"
+       tal:attributes="href view/groupInfo/url"
+       tal:content="view/groupInfo/name">this group</a>
     and you are set to receive the <em>topics digest</em>.
     This digest summarises the latest topics that have been
     discussed in the group.
@@ -21,7 +23,7 @@
     <b>Leave?</b>
     <a tal:attributes="href string:mailto:${groupEmail}?Subject=Unsubscribe"
        href='#'>Email
-      <code tal:content="groupEmail">this@address</code></a>
+      <code class="email" tal:content="groupEmail">this@address</code></a>
     with the subject line <code>Unsubscribe</code>.
   </p>
   <p tal:define="e view/siteInfo/get_support_email">
