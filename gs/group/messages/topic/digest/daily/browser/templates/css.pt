@@ -6,7 +6,7 @@
 td.gs-group-messages-topic-digest-daily-topic-info {
     padding: 0 0 20px 10px;  /* 1u 0.5u*/
 }
-.gs-group-messages-topic-digest-daily-topic ul, 
+.gs-group-messages-topic-digest-daily-topic ul,
 .gs-group-messages-topic-digest-daily-topic li {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
@@ -22,6 +22,10 @@ td.gs-group-messages-topic-digest-daily-topic-info {
     font-weight: 900;
     font-size: 20px;  /* 1u */
     line-height: 30px /* 1.5u */
+}
+.gs-group-messages-topic-digest-daily-topic .userimage {
+    width: 70px;
+    height: 70px;
 }
 #gs-group-messages-topic-digest-daily-grouplinks-more {
     padding: 0 0 0 0;
