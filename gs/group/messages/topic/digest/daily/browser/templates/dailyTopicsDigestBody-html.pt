@@ -18,7 +18,7 @@
     <tal:block
       repeat="topic options/topicsDigest/topics | view/topicsDigest/topics | python:[]">
       <tr class="gs-group-messages-topic-digest-daily-topic">
-        <td class="userimage photo" width="70"
+        <td class="userimage photo" width="70" height="70"
             tal:define="isAnon topic/last_post_author/anonymous;
                         u0 string:${view/siteInfo/url}/++resource++gs-profile-image-base-missing.jpg;
                         u1 string:${view/siteInfo/url}${topic/last_post_author/url}/gs-profile-image-square/70;
