@@ -56,6 +56,7 @@ class DailyTopicsDigest(BaseTopicsDigest):
 
     @Lazy
     def people(self):
-        people = self.messageQuery.recent_authors(days=1)
+        people = self.messageQuery.recent_authors(
+            self.siteInfo.id, self.groupInfo.id, days=1)
         retval = comma_comma_and(people)
         return retval

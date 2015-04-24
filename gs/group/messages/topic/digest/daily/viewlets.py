@@ -32,7 +32,8 @@ class DailyTopicsDigestViewlet(TopicsDigestViewlet):
 
     @Lazy
     def people(self):
-        userIds = set(self.topicsDigest.messageQuery.recent_authors(days=1))
+        userIds = set(self.topicsDigest.messageQuery.recent_authors(
+            self.siteInfo.id, self.groupInfo.id, days=1))
         users = [createObject('groupserver.UserFromId', self.context,
                               userId) for userId in userIds]
         retval = [u.name for u in users]
